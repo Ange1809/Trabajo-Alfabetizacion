@@ -1,6 +1,6 @@
 def calcular():
     print("Calculadora Simple")
-    print("Operaciones: + (suma)")
+    print("Operaciones: + (suma) - (reta)")
     
     while True:
         # Entrada de usuario
