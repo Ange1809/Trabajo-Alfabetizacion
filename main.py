@@ -1,25 +1,34 @@
+from suma import sumar
+from resta import resta
+from multiplicacion import multiplicacion
+from division import division  # Asegúrate de crear division.py
+
 def calcular():
     print("Calculadora Simple")
     print("Operaciones: + (suma), - (resta), * (multiplicación), / (división)")
     
     while True:
-        # Entrada de usuario
-        num1 = float(input("Ingrese primer número: "))
-        operador = input("Ingrese operador: ")
-        num2 = float(input("Ingrese segundo número: "))
+        try:
+            num1 = float(input("Ingrese primer número: "))
+            operador = input("Ingrese operador: ")
+            num2 = float(input("Ingrese segundo número: "))
+        except ValueError:
+            print("Entrada inválida. Asegúrese de ingresar números válidos.")
+            continue
         
         # Lógica de operaciones
         if operador == '+':
-            resultado = num1 + num2
+            resultado = sumar(num1, num2)
         elif operador == '-':
-            resultado = num1 - num2
+            resultado = resta(num1, num2)
         elif operador == '*':
-            resultado = num1 * num2
+            resultado = multiplicacion(num1, num2)
         elif operador == '/':
-            if num2 == 0:
-                print("¡Error! No se puede dividir por cero")
+            try:
+                resultado = division(num1, num2)
+            except ValueError as e:
+                print(f"Error: {e}")
                 continue
-            resultado = num1 / num2
         else:
             print("Operador inválido. Use +, -, * o /")
             continue
