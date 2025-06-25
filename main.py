@@ -1,10 +1,11 @@
 from suma import sumar
 from resta import resta
 from multiplicacion import multiplicacion
+from division import division
 
 def calcular():
     print("Calculadora Simple")
-    print("Operaciones: + (suma), - (resta), * (multiplicación)")
+    print("Operaciones: + (suma), - (resta), * (multiplicación), / (division)")
 
     while True:
         try:
@@ -22,8 +23,10 @@ def calcular():
             resultado = resta(num1, num2)
         elif operador == '*':
             resultado = multiplicacion(num1, num2)
+         elif operador == '/':
+            resultado = división(num1, num2)
         else:
-            print("Operador inválido. Use +, - o *")
+            print("Operador inválido. Use +, - , * o /")
             continue
 
         # Mostrar resultado
