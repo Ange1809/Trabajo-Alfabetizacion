@@ -24,7 +24,7 @@ def calcular():
         elif operador == '*':
             resultado = multiplicacion(num1, num2)
          elif operador == '/':
-            resultado = división(num1, num2)
+            resultado = division(num1, num2)
         else:
             print("Operador inválido. Use +, - , * o /")
             continue
